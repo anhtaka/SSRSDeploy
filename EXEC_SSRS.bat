@@ -8,7 +8,7 @@ SET TIMEOUT=60
 ::Clear Log file
 IF EXIST %logfile% DEL %logfile%
 ::Run Scripts
- %rs% -i %~dp0SSRSDeploy.rss -s "%REPORTSERVER%"
+ %rs% -i %~dp0SSRSDeploy.vbs -s "%REPORTSERVER%"
 ECHO Finished Load at TE% %TIME% >>%LOGFILE%
 ECHO. >>%LOGFILE%
 PAUSE

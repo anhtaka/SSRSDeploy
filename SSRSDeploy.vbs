@@ -6,9 +6,9 @@ Dim definition As [Byte]() = Nothing
 Dim warnings As Warning() = Nothing
 Dim parentFolder As String = "exec_ssrs"
 Dim parentPath As String = "/" '+ parentFolder 
-Dim filePath As String = "C:\Users\Administrator\Desktop\exec_ssrs\ssrs\" 
+Dim filePath As String = "C:\Users\Administrator\Desktop\SSRSDeploy\ssrs\" 
 Dim fileName As String
- 
+Dim overwrite As Boolean = True		'true is overwrite report
  
 Public Sub Main() 
 	rs.Credentials = System.Net.CredentialCache.DefaultCredentials 
@@ -48,7 +48,7 @@ Public Sub PublishReport(ByVal reportName As String)
 	End Try
 	 
 	Try
-		warnings = rs.CreateReport(reportName, parentPath, False, definition, Nothing) 
+		warnings = rs.CreateReport(reportName, parentPath, overwrite, definition, Nothing) 
 		 
 		If Not (warnings Is Nothing) Then
 			Dim warning As Warning 
