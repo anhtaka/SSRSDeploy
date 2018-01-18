@@ -27,7 +27,7 @@ Public Sub Main()
 	Dim fileEntries As String() = System.IO.Directory.GetFiles(filePath) 
 	Dim fileName As String
 	 
-		For Each fileName In fileEntries    
+		For Each fileName In fileEntries
 				fileName = filename.replace(".rdl", "") 
 				FileName = filename.replace(filePath,"") 
 					Console.WriteLine("Trying to deploy " & filename) 
